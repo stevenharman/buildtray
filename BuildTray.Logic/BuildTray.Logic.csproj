@@ -65,10 +65,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuildDetailEventArgs.cs" />
+    <Compile Include="BuildProcessTimer.cs" />
     <Compile Include="BuildStatuses.cs" />
     <Compile Include="Entities\Build.cs" />
     <Compile Include="Entities\BuildConfiguration.cs" />
     <Compile Include="Entities\BuildInfo.cs" />
+    <Compile Include="IBuildProcessTimer.cs" />
     <Compile Include="IConfigurationData.cs" />
     <Compile Include="LogicRegistry.cs" />
     <Compile Include="TFSServerProxy.cs" />

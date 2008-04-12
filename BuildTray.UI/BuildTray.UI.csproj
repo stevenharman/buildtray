@@ -77,8 +77,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BuildDetailEventArgs.cs" />
-    <Compile Include="BuildProcessTimer.cs" />
     <Compile Include="BuildTrayContainerConfig.cs" />
     <Compile Include="Configuration.cs">
       <SubType>Form</SubType>
@@ -87,7 +85,6 @@
       <DependentUpon>Configuration.cs</DependentUpon>
     </Compile>
     <Compile Include="ConfigurationData.cs" />
-    <Compile Include="IBuildProcessTimer.cs" />
     <Compile Include="NotifyIconProxy.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
