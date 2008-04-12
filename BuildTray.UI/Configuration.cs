@@ -12,11 +12,13 @@ namespace BuildTray.UI
 {
     public partial class Configuration : Form
     {
-        private TFSServerProxy proxy = new TFSServerProxy();
+        private ITFSServerProxy _proxy;
 
-        public Configuration()
+        public Configuration(ITFSServerProxy proxy)
         {
             InitializeComponent();
+
+            _proxy = proxy;
         }
 
         public NotifyIcon TrayIcon { get; set; }

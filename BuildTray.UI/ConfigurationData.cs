@@ -17,5 +17,6 @@ namespace BuildTray.UI
         public List<BuildInfo> BuildConfigurations { get; set; }
         public int PollingInterval { get; set; }
         public string LogDirectory { get; set; }
+        public string PluginDirectory { get; set; }
     }
 }
