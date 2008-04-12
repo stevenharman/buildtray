@@ -1,7 +1,7 @@
 ﻿using System;
 using BuildTray.Logic.Entities;
 
-namespace BuildTray.UI
+namespace BuildTray.Logic
 {
     public interface IBuildProcessTimer
     {
