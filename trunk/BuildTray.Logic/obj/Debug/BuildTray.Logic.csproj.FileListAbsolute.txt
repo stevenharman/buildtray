@@ -1,0 +1,5 @@
+C:\Users\kscott\Documents\Visual Studio 2008\Projects\BuildTray\BuildTray.Logic\bin\Debug\BuildTray.Logic.dll
+C:\Users\kscott\Documents\Visual Studio 2008\Projects\BuildTray\BuildTray.Logic\bin\Debug\BuildTray.Logic.pdb
+C:\Users\kscott\Documents\Visual Studio 2008\Projects\BuildTray\BuildTray.Logic\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\kscott\Documents\Visual Studio 2008\Projects\BuildTray\BuildTray.Logic\obj\Debug\BuildTray.Logic.dll
+C:\Users\kscott\Documents\Visual Studio 2008\Projects\BuildTray\BuildTray.Logic\obj\Debug\BuildTray.Logic.pdb

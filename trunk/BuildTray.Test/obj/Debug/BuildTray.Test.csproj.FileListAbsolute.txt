@@ -1,0 +1,13 @@
+C:\Users\kscott\Documents\Visual Studio 2008\Projects\BuildTray\BuildTray.Test\bin\Debug\BuildTray.Test.dll
+C:\Users\kscott\Documents\Visual Studio 2008\Projects\BuildTray\BuildTray.Test\bin\Debug\BuildTray.Test.pdb
+C:\Users\kscott\Documents\Visual Studio 2008\Projects\BuildTray\BuildTray.Test\bin\Debug\BuildTray.Logic.dll
+C:\Users\kscott\Documents\Visual Studio 2008\Projects\BuildTray\BuildTray.Test\bin\Debug\BuildTray.UI.exe
+C:\Users\kscott\Documents\Visual Studio 2008\Projects\BuildTray\BuildTray.Test\bin\Debug\BuildTray.Logic.pdb
+C:\Users\kscott\Documents\Visual Studio 2008\Projects\BuildTray\BuildTray.Test\bin\Debug\BuildTray.UI.pdb
+C:\Users\kscott\Documents\Visual Studio 2008\Projects\BuildTray\BuildTray.Test\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\kscott\Documents\Visual Studio 2008\Projects\BuildTray\BuildTray.Test\obj\Debug\BuildTray.Test.dll
+C:\Users\kscott\Documents\Visual Studio 2008\Projects\BuildTray\BuildTray.Test\obj\Debug\BuildTray.Test.pdb
+C:\Users\kscott\Documents\Visual Studio 2008\Projects\BuildTray\BuildTray.Test\bin\Debug\BuildTray.Modules.dll
+C:\Users\kscott\Documents\Visual Studio 2008\Projects\BuildTray\BuildTray.Test\bin\Debug\BuildTray.Modules.pdb
+C:\Users\kscott\Documents\Visual Studio 2008\Projects\BuildTray\BuildTray.Test\bin\Debug\StructureMap.dll
+C:\Users\kscott\Documents\Visual Studio 2008\Projects\BuildTray\BuildTray.Test\bin\Debug\StructureMap.xml
