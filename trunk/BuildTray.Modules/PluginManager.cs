@@ -8,7 +8,13 @@ using StructureMap;
 
 namespace BuildTray.Modules
 {
-    public class PluginManager
+    public interface IPluginManager
+    {
+        string PluginDirectory { get; set; }
+        void Refresh();
+    }
+
+    public class PluginManager : IPluginManager
     {
         private static readonly List<IActionModuleDefinition> _modules = new List<IActionModuleDefinition>();
 

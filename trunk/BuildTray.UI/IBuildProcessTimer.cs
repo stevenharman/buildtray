@@ -11,5 +11,6 @@ namespace BuildTray.UI
         void RemoveBuild(BuildInfo remove);
         event EventHandler<BuildDetailEventArgs> BuildStarted;
         event EventHandler<BuildDetailEventArgs> BuildCompleted;
+        event EventHandler<BuildDetailEventArgs> BuildIgnored;
     }
 }

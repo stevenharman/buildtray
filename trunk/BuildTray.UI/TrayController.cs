@@ -77,8 +77,11 @@ namespace BuildTray.UI
 
             _processTimer.BuildCompleted += _processTimer_BuildCompleted;
             _processTimer.BuildStarted += _processTimer_BuildStarted;
+            _processTimer.BuildIgnored += _processTimer_BuildIgnored;
             _processTimer.Start();
         }
+
+       
 
         public void Execute(BuildInfo buildInfo)
         {
@@ -110,10 +113,18 @@ namespace BuildTray.UI
             _completedBuilds.AddRange(builds);
         }
 
+        void _processTimer_BuildIgnored(object sender, BuildDetailEventArgs e)
+        {
+            //If the build is ignored, we need to reset the status cak to what it should be.
+            if (MostRecentCompletedBuild.Status == BuildStatuses.Passed)
+                _notifyIcon.Success();
+            else
+                _notifyIcon.Failure();
+        }
+
         void _processTimer_BuildStarted(object sender, BuildDetailEventArgs e)
         {
             _currentRunningBuild = e.Build.ToBuild();
-
 
             _notifyIcon.Text = "Build started " + (DateTime.Now - _currentRunningBuild.StartTime).ToDisplay() +
                                " ago.";
