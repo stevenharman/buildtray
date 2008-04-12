@@ -9,5 +9,7 @@ namespace BuildTray.Logic
         int PollingInterval { get; set; }
         string LogDirectory { get; set; }
         string PluginDirectory { get; set; }
+
+        void Save();
     }
 }
