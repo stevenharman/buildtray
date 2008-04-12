@@ -1,0 +1,397 @@
+<Configuration>
+  <UnitTestRunner>
+    <CustomStartDirectory>
+    </CustomStartDirectory>
+    <UseShadowCopy>True</UseShadowCopy>
+    <UseCustomFolder>False</UseCustomFolder>
+    <EnableUnitTesting>True</EnableUnitTesting>
+    <Providers />
+  </UnitTestRunner>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="livetemplates.csharp.usevar">True</setting>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <CodeCleanup RecentlyUsed="" />
+  <RecentFiles>
+    <RecentFiles>
+      <File id="40A26D4F-A63E-417C-8C3D-D90FD2A4EC44/f:Configuration.Designer.cs" caret="2214" scrollPosition="0|22" />
+      <File id="40A26D4F-A63E-417C-8C3D-D90FD2A4EC44/f:Configuration.cs" caret="0" scrollPosition="0|0" />
+      <File id="05EFBEE3-CCD0-453B-A085-E6C564C695F1/f:TestExtensions.cs" caret="0" scrollPosition="0|0" />
+      <File id="D4402005-8F37-4722-B187-D67F66190994/f:Program.cs" caret="0" scrollPosition="0|0" />
+      <File id="4113B6A5-29B7-48E8-9B3B-A327BC80610D/d:Entities/f:BuildInfo.cs" caret="304" scrollPosition="0|0" />
+      <File id="4113B6A5-29B7-48E8-9B3B-A327BC80610D/f:TrayStatus.cs" caret="120" scrollPosition="0|0" />
+      <File id="4113B6A5-29B7-48E8-9B3B-A327BC80610D/f:BuildStatuses.cs" caret="212" scrollPosition="0|0" />
+      <File id="4113B6A5-29B7-48E8-9B3B-A327BC80610D/f:UtilityExtension.cs" caret="3725" scrollPosition="0|86" />
+      <File id="4113B6A5-29B7-48E8-9B3B-A327BC80610D/f:TFSServerProxy.cs" caret="522" scrollPosition="0|6" />
+      <File id="4113B6A5-29B7-48E8-9B3B-A327BC80610D/d:Entities/f:BuildConfiguration.cs" caret="326" scrollPosition="0|6" />
+      <File id="40A26D4F-A63E-417C-8C3D-D90FD2A4EC44/f:NotifyIconProxy.cs" caret="91" scrollPosition="0|0" />
+      <File id="ECB07201-1203-41FF-9C2D-BDAD5F5F72A0/f:INotifyIcon.cs" caret="291" scrollPosition="0|0" />
+      <File id="40A26D4F-A63E-417C-8C3D-D90FD2A4EC44/f:TrayController.cs" caret="394" scrollPosition="0|0" />
+      <File id="ECB07201-1203-41FF-9C2D-BDAD5F5F72A0/f:ITrayController.cs" caret="764" scrollPosition="0|0" />
+      <File id="05EFBEE3-CCD0-453B-A085-E6C564C695F1/f:NotifyIconExtensions.cs" caret="0" scrollPosition="0|0" />
+      <File id="ECB07201-1203-41FF-9C2D-BDAD5F5F72A0/f:PlaySoundAction.cs" caret="695" scrollPosition="0|11" />
+      <File id="ECB07201-1203-41FF-9C2D-BDAD5F5F72A0/f:IActionModuleDefinition.cs" caret="159" scrollPosition="0|0" />
+      <File id="40A26D4F-A63E-417C-8C3D-D90FD2A4EC44/f:IBuildProcessTimer.cs" caret="13" scrollPosition="0|0" />
+      <File id="40A26D4F-A63E-417C-8C3D-D90FD2A4EC44/f:BuildDetailEventArgs.cs" caret="13" scrollPosition="0|0" />
+      <File id="40A26D4F-A63E-417C-8C3D-D90FD2A4EC44/f:BuildProcessTimer.cs" caret="434" scrollPosition="0|0" />
+      <File id="C1F7BD2C-A595-4A6C-A355-BB833F0A988B/f:StructureMap.xml" caret="0" scrollPosition="0|0" />
+      <File id="C1F7BD2C-A595-4A6C-A355-BB833F0A988B/f:Rhino.Mocks.xml" caret="0" scrollPosition="0|0" />
+      <File id="40A26D4F-A63E-417C-8C3D-D90FD2A4EC44/f:Program.cs" caret="874" scrollPosition="0|22" />
+      <File id="4113B6A5-29B7-48E8-9B3B-A327BC80610D/d:Entities/f:Build.cs" caret="214" scrollPosition="0|0" />
+      <File id="ECB07201-1203-41FF-9C2D-BDAD5F5F72A0/f:PluginManager.cs" caret="1242" scrollPosition="0|16" />
+      <File id="4113B6A5-29B7-48E8-9B3B-A327BC80610D/f:IConfigurationData.cs" caret="290" scrollPosition="0|0" />
+      <File id="40A26D4F-A63E-417C-8C3D-D90FD2A4EC44/f:ConfigurationData.cs" caret="154" scrollPosition="0|0" />
+      <File id="ECB07201-1203-41FF-9C2D-BDAD5F5F72A0/f:SaveCompletedBuildAction.cs" caret="965" scrollPosition="0|26" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="05EFBEE3-CCD0-453B-A085-E6C564C695F1/f:NotifyIconExtensions.cs" caret="499" scrollPosition="0|9" />
+      <File id="05EFBEE3-CCD0-453B-A085-E6C564C695F1/f:NotifyIconExtensions.cs" caret="373" scrollPosition="0|9" />
+      <File id="05EFBEE3-CCD0-453B-A085-E6C564C695F1/f:NotifyIconExtensions.cs" caret="241" scrollPosition="0|0" />
+      <File id="05EFBEE3-CCD0-453B-A085-E6C564C695F1/f:NotifyIconExtensions.cs" caret="1418" scrollPosition="0|45" />
+      <File id="05EFBEE3-CCD0-453B-A085-E6C564C695F1/f:NotifyIconExtensions.cs" caret="1292" scrollPosition="0|45" />
+      <File id="ECB07201-1203-41FF-9C2D-BDAD5F5F72A0/f:PlaySoundAction.cs" caret="214" scrollPosition="0|0" />
+      <File id="ECB07201-1203-41FF-9C2D-BDAD5F5F72A0/f:PluginManager.cs" caret="343" scrollPosition="0|0" />
+      <File id="ECB07201-1203-41FF-9C2D-BDAD5F5F72A0/f:PluginManager.cs" caret="817" scrollPosition="0|9" />
+      <File id="ECB07201-1203-41FF-9C2D-BDAD5F5F72A0/f:IActionModuleDefinition.cs" caret="277" scrollPosition="0|0" />
+      <File id="ECB07201-1203-41FF-9C2D-BDAD5F5F72A0/f:PlaySoundAction.cs" caret="780" scrollPosition="0|5" />
+      <File id="ECB07201-1203-41FF-9C2D-BDAD5F5F72A0/f:PluginManager.cs" caret="112" scrollPosition="0|0" />
+      <File id="40A26D4F-A63E-417C-8C3D-D90FD2A4EC44/f:BuildDetailEventArgs.cs" caret="204" scrollPosition="0|0" />
+      <File id="40A26D4F-A63E-417C-8C3D-D90FD2A4EC44/f:BuildDetailEventArgs.cs" caret="13" scrollPosition="0|0" />
+      <File id="40A26D4F-A63E-417C-8C3D-D90FD2A4EC44/f:IBuildProcessTimer.cs" caret="390" scrollPosition="0|0" />
+      <File id="40A26D4F-A63E-417C-8C3D-D90FD2A4EC44/f:IBuildProcessTimer.cs" caret="13" scrollPosition="0|0" />
+      <File id="40A26D4F-A63E-417C-8C3D-D90FD2A4EC44/f:BuildProcessTimer.cs" caret="439" scrollPosition="0|14" />
+      <File id="C1F7BD2C-A595-4A6C-A355-BB833F0A988B/f:StructureMap.xml" caret="95977" scrollPosition="0|0" />
+      <File id="40A26D4F-A63E-417C-8C3D-D90FD2A4EC44/f:Program.cs" caret="825" scrollPosition="0|22" />
+      <File id="ECB07201-1203-41FF-9C2D-BDAD5F5F72A0/f:SaveCompletedBuildAction.cs" caret="1601" scrollPosition="0|0" />
+      <File id="ECB07201-1203-41FF-9C2D-BDAD5F5F72A0/f:SaveCompletedBuildAction.cs" caret="802" scrollPosition="0|0" />
+      <File id="ECB07201-1203-41FF-9C2D-BDAD5F5F72A0/f:SaveCompletedBuildAction.cs" caret="725" scrollPosition="0|0" />
+      <File id="ECB07201-1203-41FF-9C2D-BDAD5F5F72A0/f:PluginManager.cs" caret="1346" scrollPosition="0|25" />
+      <File id="4113B6A5-29B7-48E8-9B3B-A327BC80610D/f:IConfigurationData.cs" caret="70" scrollPosition="0|0" />
+      <File id="40A26D4F-A63E-417C-8C3D-D90FD2A4EC44/f:ConfigurationData.cs" caret="254" scrollPosition="0|0" />
+      <File id="40A26D4F-A63E-417C-8C3D-D90FD2A4EC44/f:ConfigurationData.cs" caret="48" scrollPosition="0|0" />
+      <File id="ECB07201-1203-41FF-9C2D-BDAD5F5F72A0/f:SaveCompletedBuildAction.cs" caret="611" scrollPosition="0|2" />
+      <File id="ECB07201-1203-41FF-9C2D-BDAD5F5F72A0/f:SaveCompletedBuildAction.cs" caret="333" scrollPosition="0|2" />
+      <File id="4113B6A5-29B7-48E8-9B3B-A327BC80610D/f:IConfigurationData.cs" caret="290" scrollPosition="0|0" />
+      <File id="40A26D4F-A63E-417C-8C3D-D90FD2A4EC44/f:ConfigurationData.cs" caret="536" scrollPosition="0|0" />
+      <File id="ECB07201-1203-41FF-9C2D-BDAD5F5F72A0/f:SaveCompletedBuildAction.cs" caret="982" scrollPosition="0|26" />
+    </RecentEdits>
+  </RecentFiles>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="public" priority="87" />
+      <Item value="string" priority="23" />
+      <Item value="get" priority="28" />
+      <Item value="List" priority="8" />
+      <Item value="IList" priority="2" />
+      <Item value="throw" priority="0" />
+      <Item value="new" priority="37" />
+      <Item value="ApplicationException" priority="0" />
+      <Item value="Value" priority="2" />
+      <Item value="foreach" priority="2" />
+      <Item value="var" priority="8" />
+      <Item value="pair" priority="6" />
+      <Item value="TFSServerProxy" priority="5" />
+      <Item value="proxy" priority="2" />
+      <Item value="GetBuildConfigurations" priority="2" />
+      <Item value="Uri" priority="3" />
+      <Item value="builds" priority="1" />
+      <Item value="in" priority="1" />
+      <Item value="Console" priority="1" />
+      <Item value="WriteLine" priority="0" />
+      <Item value="ReadKey" priority="0" />
+      <Item value="set" priority="21" />
+      <Item value="list" priority="0" />
+      <Item value="Add" priority="10" />
+      <Item value="BuildConfiguration" priority="1" />
+      <Item value="ProjectName" priority="3" />
+      <Item value="Key" priority="1" />
+      <Item value="BuildName" priority="3" />
+      <Item value="build" priority="28" />
+      <Item value="NotifyIcon" priority="15" />
+      <Item value="notifyIcon" priority="10" />
+      <Item value="Icon" priority="9" />
+      <Item value="ResourceManager" priority="2" />
+      <Item value="Properties" priority="2" />
+      <Item value="Settings" priority="1" />
+      <Item value="Resources" priority="1" />
+      <Item value="Culture" priority="0" />
+      <Item value="Configuration" priority="6" />
+      <Item value="ResourceSet" priority="0" />
+      <Item value="Success" priority="26" />
+      <Item value="GetHicon" priority="1" />
+      <Item value="ApplicationContext" priority="1" />
+      <Item value="context" priority="2" />
+      <Item value="MainForm" priority="1" />
+      <Item value="Form" priority="0" />
+      <Item value="Visible" priority="5" />
+      <Item value="false" priority="2" />
+      <Item value="Controls" priority="0" />
+      <Item value="true" priority="2" />
+      <Item value="override" priority="0" />
+      <Item value="ThreadExit" priority="0" />
+      <Item value="EventHandler" priority="4" />
+      <Item value="interface" priority="0" />
+      <Item value="IBuildStatusTrayIcon" priority="0" />
+      <Item value="return" priority="43" />
+      <Item value="result" priority="7" />
+      <Item value="ContextMenu" priority="2" />
+      <Item value="Items" priority="2" />
+      <Item value="toolStripItem" priority="5" />
+      <Item value="Click" priority="3" />
+      <Item value="Application" priority="0" />
+      <Item value="Exit" priority="0" />
+      <Item value="BuildStatusTrayIcon" priority="1" />
+      <Item value="static" priority="16" />
+      <Item value="class" priority="5" />
+      <Item value="this" priority="17" />
+      <Item value="private" priority="30" />
+      <Item value="Dictionary" priority="1" />
+      <Item value="if" priority="40" />
+      <Item value="icons" priority="8" />
+      <Item value="ContainsKey" priority="1" />
+      <Item value="Dictionary&lt;string,Icon&gt;" priority="0" />
+      <Item value="void" priority="37" />
+      <Item value="Action" priority="5" />
+      <Item value="IEnumerable" priority="3" />
+      <Item value="T" priority="2" />
+      <Item value="action" priority="2" />
+      <Item value="null" priority="6" />
+      <Item value="switch" priority="2" />
+      <Item value="case" priority="16" />
+      <Item value="break" priority="8" />
+      <Item value="FromHandle" priority="0" />
+      <Item value="SuccessRunning" priority="0" />
+      <Item value="FailureRunning" priority="0" />
+      <Item value="Failure" priority="27" />
+      <Item value="ContextMenuStrip" priority="4" />
+      <Item value="configurationForm" priority="5" />
+      <Item value="IsDisposed" priority="0" />
+      <Item value="Show" priority="0" />
+      <Item value="ShowDialog" priority="0" />
+      <Item value="Dispose" priority="1" />
+      <Item value="Random" priority="1" />
+      <Item value="rand" priority="0" />
+      <Item value="Next" priority="0" />
+      <Item value="nextRandom" priority="0" />
+      <Item value="sender" priority="2" />
+      <Item value="InProgress" priority="9" />
+      <Item value="TrayIcon" priority="0" />
+      <Item value="ServerUrl" priority="2" />
+      <Item value="serverUrl" priority="1" />
+      <Item value="Serializable" priority="1" />
+      <Item value="int" priority="7" />
+      <Item value="enum" priority="0" />
+      <Item value="TrayStatus" priority="111" />
+      <Item value="status" priority="30" />
+      <Item value="FailureInProgress" priority="31" />
+      <Item value="newStatus" priority="7" />
+      <Item value="bool" priority="5" />
+      <Item value="SuccessInProgress" priority="22" />
+      <Item value="inProgress" priority="1" />
+      <Item value="failure" priority="0" />
+      <Item value="success" priority="0" />
+      <Item value="TestMethod" priority="15" />
+      <Item value="Combine" priority="16" />
+      <Item value="ShouldBe" priority="17" />
+      <Item value="ShouldBeTheSameAs" priority="0" />
+      <Item value="TestClass" priority="1" />
+      <Item value="TestInitialize" priority="0" />
+      <Item value="_icon" priority="25" />
+      <Item value="CurrentStatus" priority="5" />
+      <Item value="Timer" priority="2" />
+      <Item value="BuildStatusProcess" priority="3" />
+      <Item value="_internalTimer" priority="3" />
+      <Item value="TimerCallback" priority="2" />
+      <Item value="object" priority="2" />
+      <Item value="ConfigurationData" priority="2" />
+      <Item value="BuildConfigurations" priority="2" />
+      <Item value="_proxy" priority="3" />
+      <Item value="IBuildDetail" priority="4" />
+      <Item value="GetBuildDetails" priority="0" />
+      <Item value="bc" priority="11" />
+      <Item value="details" priority="2" />
+      <Item value="Each" priority="2" />
+      <Item value="BuildNumber" priority="9" />
+      <Item value="ToInt32" priority="0" />
+      <Item value="LastBuild" priority="3" />
+      <Item value="Status" priority="12" />
+      <Item value="BuildStatus" priority="24" />
+      <Item value="Stopped" priority="2" />
+      <Item value="NotStarted" priority="2" />
+      <Item value="Failed" priority="5" />
+      <Item value="PartiallySucceeded" priority="2" />
+      <Item value="Succeeded" priority="2" />
+      <Item value="currentStatus" priority="7" />
+      <Item value="else" priority="6" />
+      <Item value="default" priority="0" />
+      <Item value="CanConvert" priority="1" />
+      <Item value="ToTrayStatus" priority="0" />
+      <Item value="CompilationStatus" priority="0" />
+      <Item value="BuildPhaseStatus" priority="0" />
+      <Item value="OrderBy" priority="1" />
+      <Item value="LogLocation" priority="3" />
+      <Item value="LogLocations" priority="1" />
+      <Item value="Dictionary&lt;int,string&gt;" priority="0" />
+      <Item value="configuration" priority="2" />
+      <Item value="PollingTimer" priority="0" />
+      <Item value="TimeSpan" priority="2" />
+      <Item value="_trayIcon" priority="9" />
+      <Item value="trayIcon" priority="0" />
+      <Item value="data" priority="1" />
+      <Item value="extern" priority="0" />
+      <Item value="IntPtr" priority="2" />
+      <Item value="typeof" priority="3" />
+      <Item value="Assembly" priority="4" />
+      <Item value="PlaySound" priority="4" />
+      <Item value="Zero" priority="1" />
+      <Item value="ManifestModule" priority="0" />
+      <Item value="try" priority="2" />
+      <Item value="catch" priority="0" />
+      <Item value="finally" priority="0" />
+      <Item value="PlayBuildSound" priority="0" />
+      <Item value="previousStatus" priority="3" />
+      <Item value="Where" priority="2" />
+      <Item value="GetBuildNumber" priority="1" />
+      <Item value="EventArgs" priority="2" />
+      <Item value="BuildDetailEventArgs" priority="3" />
+      <Item value="BuildProcessTimer" priority="0" />
+      <Item value="ITFSServerProxy" priority="0" />
+      <Item value="BuildInfo" priority="5" />
+      <Item value="_builds" priority="2" />
+      <Item value="PollingInterval" priority="2" />
+      <Item value="Remove" priority="0" />
+      <Item value="remove" priority="0" />
+      <Item value="_lastBuild" priority="1" />
+      <Item value="buildNumber" priority="4" />
+      <Item value="BuildCompleted" priority="2" />
+      <Item value="where" priority="0" />
+      <Item value="handler" priority="3" />
+      <Item value="Invoke" priority="1" />
+      <Item value="Raise" priority="1" />
+      <Item value="Build" priority="21" />
+      <Item value="_currentBuildNumber" priority="1" />
+      <Item value="BuildStarted" priority="1" />
+      <Item value="_isRunning" priority="2" />
+      <Item value="while" priority="0" />
+      <Item value="d" priority="4" />
+      <Item value="DateTime" priority="3" />
+      <Item value="ProjectFileCreationException" priority="0" />
+      <Item value="detail" priority="6" />
+      <Item value="DropLocation" priority="1" />
+      <Item value="FinishTime" priority="3" />
+      <Item value="StartTime" priority="2" />
+      <Item value="MinValue" priority="0" />
+      <Item value="RequestedFor" priority="1" />
+      <Item value="BuildStatuses" priority="2" />
+      <Item value="Passed" priority="1" />
+      <Item value="ToStatus" priority="0" />
+      <Item value="TrayController" priority="4" />
+      <Item value="n" priority="6" />
+      <Item value="System" priority="3" />
+      <Item value="Drawing" priority="1" />
+      <Item value="INotifyIcon" priority="3" />
+      <Item value="event" priority="0" />
+      <Item value="NotifyIconProxy" priority="0" />
+      <Item value="BalloonTipIcon" priority="1" />
+      <Item value="BalloonTipTitle" priority="1" />
+      <Item value="BalloonTipText" priority="1" />
+      <Item value="Text" priority="2" />
+      <Item value="ShowBalloonTip" priority="1" />
+      <Item value="timeout" priority="1" />
+      <Item value="tipTitle" priority="0" />
+      <Item value="tipText" priority="0" />
+      <Item value="DoubleClick" priority="0" />
+      <Item value="Empty" priority="0" />
+      <Item value="_notifyIcon" priority="7" />
+      <Item value="using" priority="1" />
+      <Item value="menuStrip" priority="1" />
+      <Item value="virtual" priority="2" />
+      <Item value="CreateMenuStrip" priority="0" />
+      <Item value="IBuildProcessTimer" priority="1" />
+      <Item value="processTimer" priority="1" />
+      <Item value="readonly" priority="2" />
+      <Item value="_processTimer" priority="7" />
+      <Item value="Start" priority="0" />
+      <Item value="e" priority="2" />
+      <Item value="ToBuild" priority="2" />
+      <Item value="_currentRunningBuild" priority="5" />
+      <Item value="ToDisplay" priority="0" />
+      <Item value="_completedBuilds" priority="6" />
+      <Item value="Max" priority="0" />
+      <Item value="cb" priority="1" />
+      <Item value="FirstOrDefault" priority="3" />
+      <Item value="OrderByDescending" priority="1" />
+      <Item value="MostRecentCompletedBuild" priority="3" />
+      <Item value="Now" priority="0" />
+      <Item value="AsReadOnly" priority="0" />
+      <Item value="_completedBuildActions" priority="1" />
+      <Item value="List&lt;Action&lt;Build,TrayController&gt;&gt;" priority="0" />
+      <Item value="_inProgressBuildActions" priority="0" />
+      <Item value="AddBuild" priority="0" />
+      <Item value="buildInfo" priority="2" />
+      <Item value="RemoveBuild" priority="1" />
+      <Item value="_currentBuildInfo" priority="2" />
+      <Item value="Func" priority="1" />
+      <Item value="IActionModuleDefinition" priority="6" />
+      <Item value="Play" priority="0" />
+      <Item value="b" priority="0" />
+      <Item value="CompletedBuilds" priority="0" />
+      <Item value="previousBuild" priority="0" />
+      <Item value="PlaySoundAction" priority="0" />
+      <Item value="soundFile" priority="1" />
+      <Item value="BuildTray" priority="0" />
+      <Item value="List&lt;IActionModuleDefinition&gt;" priority="0" />
+      <Item value="PluginManager" priority="0" />
+      <Item value="_modules" priority="0" />
+      <Item value="GetTypes" priority="1" />
+      <Item value="Type" priority="0" />
+      <Item value="AssemblyLoadEventHandler" priority="0" />
+      <Item value="assembly" priority="0" />
+      <Item value="tp" priority="0" />
+      <Item value="GetCustomAttributes" priority="0" />
+      <Item value="att" priority="2" />
+      <Item value="GetInterfaces" priority="0" />
+      <Item value="Name" priority="0" />
+      <Item value="actionTypes" priority="1" />
+      <Item value="results" priority="0" />
+      <Item value="Activator" priority="0" />
+      <Item value="CreateInstance" priority="0" />
+      <Item value="PluginDirectory" priority="2" />
+      <Item value="IsNullOrEmpty" priority="0" />
+      <Item value="Directory" priority="2" />
+      <Item value="GetFiles" priority="0" />
+      <Item value="modules" priority="0" />
+      <Item value="LoadFrom" priority="0" />
+      <Item value="GetCustomActions" priority="0" />
+      <Item value="GetType" priority="1" />
+      <Item value="ITrayController" priority="0" />
+      <Item value="Xml" priority="1" />
+      <Item value="Serialization" priority="0" />
+      <Item value="XmlSerializer" priority="0" />
+      <Item value="serializer" priority="1" />
+      <Item value="Serialize" priority="0" />
+      <Item value="FileStream" priority="0" />
+      <Item value="GetInstance" priority="0" />
+      <Item value="SaveCompletedBuildAction" priority="0" />
+      <Item value="_configuration" priority="1" />
+      <Item value="LogDirectory" priority="0" />
+      <Item value="File" priority="2" />
+      <Item value="IO" priority="0" />
+      <Item value="Path" priority="0" />
+      <Item value="FileMode" priority="0" />
+      <Item value="Create" priority="0" />
+      <Item value="FileAccess" priority="0" />
+      <Item value="Write" priority="0" />
+      <Item value="stream" priority="0" />
+      <Item value="Close" priority="0" />
+      <Item value="ToString" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>
