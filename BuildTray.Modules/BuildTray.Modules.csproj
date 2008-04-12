@@ -55,6 +55,7 @@
     <Compile Include="IActionModuleDefinition.cs" />
     <Compile Include="INotifyIcon.cs" />
     <Compile Include="ITrayController.cs" />
+    <Compile Include="ModuleRegistry.cs" />
     <Compile Include="PlaySoundAction.cs" />
     <Compile Include="PluginManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

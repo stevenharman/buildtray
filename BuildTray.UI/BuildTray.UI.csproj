@@ -29,7 +29,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>default.html</WebPage>
-    <ApplicationRevision>8</ApplicationRevision>
+    <ApplicationRevision>9</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -79,6 +79,7 @@
   <ItemGroup>
     <Compile Include="BuildDetailEventArgs.cs" />
     <Compile Include="BuildProcessTimer.cs" />
+    <Compile Include="BuildTrayContainerConfig.cs" />
     <Compile Include="Configuration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +115,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="TrayController.cs" />
+    <Compile Include="UiRegistry.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\blueHeart.png" />

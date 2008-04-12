@@ -7,6 +7,7 @@ using BuildTray.UI.Properties;
 using BuildTray.Logic.Entities;
 using BuildTray.Logic;
 using BuildTray.Modules;
+using StructureMap;
 
 namespace BuildTray.UI
 {
@@ -27,14 +28,7 @@ namespace BuildTray.UI
             {
                 ApplicationContext context = new ApplicationContext();
 
-                //ConfigurationData data = new ConfigurationData();
-                //data.BuildConfigurations.Add(new BuildConfiguration { BuildName = "Phoenix_Release_1.0_UnitTests", ProjectName = "Phoenix", ServerUrl = new Uri("http://vrp-tfs-000:8080") });
-                //data.BuildConfigurations.Add(new BuildConfiguration
-                //                                 {
-                //                                     BuildName = "Phoenix_UnitTests",
-                //                                     ProjectName = "Phoenix",
-                //                                     ServerUrl = new Uri("http://vrp-tfs-000:8080")
-                //                                 });
+                BuildTrayContainerConfig.BootstrapStructureMapConfiguration();
 
                 var info = new BuildInfo{
                     BuildName = "Phoenix_UnitTests",
@@ -42,9 +36,9 @@ namespace BuildTray.UI
                     ServerUrl = new Uri("http://vrp-tfs-000:8080")
                 };
 
-                var timer = new BuildProcessTimer(new TFSServerProxy());
-                timer.PollingInterval = 30;
-                TrayController controller = new TrayController(new NotifyIconProxy(), timer);
+                ObjectFactory.GetInstance<IConfigurationData>().PollingInterval = 30;
+                ITrayController controller = ObjectFactory.GetInstance<ITrayController>();
+
                 controller.AddCompletionModule("FailedTestAction", new FailedTestAction().GetAction());
                 controller.Initialize();
                 controller.Execute(info);
