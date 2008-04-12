@@ -7,6 +7,7 @@ namespace BuildTray.Logic
         protected override void configure()
         {
             ForRequestedType<ITFSServerProxy>().TheDefaultIsConcreteType<TFSServerProxy>();
+            ForRequestedType<IBuildProcessTimer>().TheDefaultIsConcreteType<BuildProcessTimer>();
         }
     }
 }

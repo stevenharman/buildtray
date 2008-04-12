@@ -13,7 +13,6 @@ namespace BuildTray.UI
 
 
             ForRequestedType<INotifyIcon>().TheDefaultIsConcreteType<NotifyIconProxy>().AsSingletons();
-            ForRequestedType<IBuildProcessTimer>().TheDefaultIsConcreteType<BuildProcessTimer>();
             ForRequestedType<ITrayController>().TheDefaultIsConcreteType<TrayController>().AsSingletons();
         }
     }
