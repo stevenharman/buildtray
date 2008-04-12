@@ -1,7 +1,0 @@
-C:\Users\kscott\Documents\Visual Studio 2008\Projects\BuildTray\BuildTray.TestConsole\bin\Debug\BuildTray.TestConsole.exe
-C:\Users\kscott\Documents\Visual Studio 2008\Projects\BuildTray\BuildTray.TestConsole\bin\Debug\BuildTray.TestConsole.pdb
-C:\Users\kscott\Documents\Visual Studio 2008\Projects\BuildTray\BuildTray.TestConsole\bin\Debug\BuildTray.Logic.dll
-C:\Users\kscott\Documents\Visual Studio 2008\Projects\BuildTray\BuildTray.TestConsole\bin\Debug\BuildTray.Logic.pdb
-C:\Users\kscott\Documents\Visual Studio 2008\Projects\BuildTray\BuildTray.TestConsole\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\kscott\Documents\Visual Studio 2008\Projects\BuildTray\BuildTray.TestConsole\obj\Debug\BuildTray.TestConsole.exe
-C:\Users\kscott\Documents\Visual Studio 2008\Projects\BuildTray\BuildTray.TestConsole\obj\Debug\BuildTray.TestConsole.pdb

@@ -1,9 +1,0 @@
-C:\Users\kscott\Documents\Visual Studio 2008\Projects\BuildTray\BuildTray.Modules\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\kscott\Documents\Visual Studio 2008\Projects\BuildTray\BuildTray.Modules\bin\Debug\BuildTray.Modules.dll
-C:\Users\kscott\Documents\Visual Studio 2008\Projects\BuildTray\BuildTray.Modules\bin\Debug\BuildTray.Modules.pdb
-C:\Users\kscott\Documents\Visual Studio 2008\Projects\BuildTray\BuildTray.Modules\bin\Debug\BuildTray.Logic.dll
-C:\Users\kscott\Documents\Visual Studio 2008\Projects\BuildTray\BuildTray.Modules\bin\Debug\BuildTray.Logic.pdb
-C:\Users\kscott\Documents\Visual Studio 2008\Projects\BuildTray\BuildTray.Modules\obj\Debug\BuildTray.Modules.dll
-C:\Users\kscott\Documents\Visual Studio 2008\Projects\BuildTray\BuildTray.Modules\obj\Debug\BuildTray.Modules.pdb
-C:\Users\kscott\Documents\Visual Studio 2008\Projects\BuildTray\BuildTray.Modules\bin\Debug\StructureMap.dll
-C:\Users\kscott\Documents\Visual Studio 2008\Projects\BuildTray\BuildTray.Modules\bin\Debug\StructureMap.xml
