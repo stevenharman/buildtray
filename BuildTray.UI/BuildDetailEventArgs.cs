@@ -6,6 +6,7 @@ namespace BuildTray.UI
     public class BuildDetailEventArgs : EventArgs
     {
         public IBuildDetail Build { get; set; }
+        public DateTime MostRecentStartDate { get; set; }
     }
 
 }
