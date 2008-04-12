@@ -69,7 +69,7 @@ namespace BuildTray.UI
             _notifyIcon.ContextMenuStrip = CreateMenuStrip();
             _notifyIcon.Success();
             _notifyIcon.Visible = true;
-            _notifyIcon.DoubleClick += (sender, e) => 
+            _notifyIcon.DoubleClick += (sender, e) =>
                             {
                                 if (!string.IsNullOrEmpty(_notifyIcon.BalloonTipText))
                                     MessageBox.Show(_notifyIcon.BalloonTipText, "Build Failure");
@@ -113,11 +113,17 @@ namespace BuildTray.UI
         void _processTimer_BuildStarted(object sender, BuildDetailEventArgs e)
         {
             _currentRunningBuild = e.Build.ToBuild();
-            _notifyIcon.InProgress();
 
-            _notifyIcon.Text = "Build started " + (DateTime.Now - _currentRunningBuild.StartTime).ToDisplay() + " ago.";
 
-            _inProgressBuildActions.Values.Each(action => action(_currentRunningBuild, this));
+            _notifyIcon.Text = "Build started " + (DateTime.Now - _currentRunningBuild.StartTime).ToDisplay() +
+                               " ago.";
+
+            if (_currentRunningBuild.StartTime >= e.MostRecentStartDate)
+            {
+                _notifyIcon.InProgress();
+
+                _inProgressBuildActions.Values.Each(action => action(_currentRunningBuild, this));
+            }
         }
 
         void _processTimer_BuildCompleted(object sender, BuildDetailEventArgs e)
@@ -127,15 +133,20 @@ namespace BuildTray.UI
             if (_currentRunningBuild != null && _currentRunningBuild.BuildNumber == MostRecentCompletedBuild.BuildNumber)
                 _currentRunningBuild = null;
 
-            _notifyIcon.Text = "Build completed " + (DateTime.Now - (MostRecentCompletedBuild.FinishTime
-                                                        ?? MostRecentCompletedBuild.StartTime)).ToDisplay() + " ago.";
+            //If we are getting multiple builds then we don't want to show tool tips on each one.
+            if (MostRecentCompletedBuild.StartTime == e.MostRecentStartDate)
+            {
+                _notifyIcon.Text = "Build completed " + (DateTime.Now - (MostRecentCompletedBuild.FinishTime
+                                                                         ?? MostRecentCompletedBuild.StartTime)).
+                                                            ToDisplay() + " ago.";
 
-            if (MostRecentCompletedBuild.Status == BuildStatuses.Passed)
-                _notifyIcon.Success();
-            else
-                _notifyIcon.Failure();
+                if (MostRecentCompletedBuild.Status == BuildStatuses.Passed)
+                    _notifyIcon.Success();
+                else
+                    _notifyIcon.Failure();
 
-            _completedBuildActions.Values.Each(action => action(MostRecentCompletedBuild, this));
+                _completedBuildActions.Values.Each(action => action(MostRecentCompletedBuild, this));
+            }
         }
 
         public virtual ContextMenuStrip CreateMenuStrip()
