@@ -10,7 +10,7 @@ namespace BuildTray.Modules
 {
     public interface IPluginManager
     {
-        string PluginDirectory { get; set; }
+        string PluginDirectory { get; }
         void Refresh();
     }
 
@@ -18,7 +18,17 @@ namespace BuildTray.Modules
     {
         private static readonly List<IActionModuleDefinition> _modules = new List<IActionModuleDefinition>();
 
-        public string PluginDirectory { get; set; }
+        public string PluginDirectory
+        {
+            get { return _config.PluginDirectory; }
+        }
+
+        private readonly IConfigurationData _config;
+
+        public PluginManager(IConfigurationData config)
+        {
+            _config = config;   
+        }
 
         public void Refresh()
         {

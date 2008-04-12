@@ -8,5 +8,6 @@ namespace BuildTray.Logic
         List<BuildInfo> BuildConfigurations { get; set; }
         int PollingInterval { get; set; }
         string LogDirectory { get; set; }
+        string PluginDirectory { get; set; }
     }
 }
