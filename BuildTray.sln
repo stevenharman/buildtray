@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildTray.Logic", "BuildTray.Logic\BuildTray.Logic.csproj", "{4113B6A5-29B7-48E8-9B3B-A327BC80610D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildTray.TestConsole", "BuildTray.TestConsole\BuildTray.TestConsole.csproj", "{D4402005-8F37-4722-B187-D67F66190994}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildTray.UI", "BuildTray.UI\BuildTray.UI.csproj", "{40A26D4F-A63E-417C-8C3D-D90FD2A4EC44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildTray.Test", "BuildTray.Test\BuildTray.Test.csproj", "{05EFBEE3-CCD0-453B-A085-E6C564C695F1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2AFE554A-2120-456D-BC3B-49AD254BBAD5}"
+	ProjectSection(SolutionItems) = preProject
+		BuildTray.vsmdi = BuildTray.vsmdi
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildTray.Modules", "BuildTray.Modules\BuildTray.Modules.csproj", "{ECB07201-1203-41FF-9C2D-BDAD5F5F72A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External Assemblies", "External Assemblies", "{C1F7BD2C-A595-4A6C-A355-BB833F0A988B}"
+	ProjectSection(SolutionItems) = preProject
+		External Assemlies\Rhino.Mocks.dll = External Assemlies\Rhino.Mocks.dll
+		External Assemlies\Rhino.Mocks.xml = External Assemlies\Rhino.Mocks.xml
+		External Assemlies\StructureMap.AutoMocking.dll = External Assemlies\StructureMap.AutoMocking.dll
+		External Assemlies\StructureMap.dll = External Assemlies\StructureMap.dll
+		External Assemlies\StructureMap.xml = External Assemlies\StructureMap.xml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = BuildTray.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4113B6A5-29B7-48E8-9B3B-A327BC80610D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4113B6A5-29B7-48E8-9B3B-A327BC80610D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4113B6A5-29B7-48E8-9B3B-A327BC80610D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4113B6A5-29B7-48E8-9B3B-A327BC80610D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4402005-8F37-4722-B187-D67F66190994}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4402005-8F37-4722-B187-D67F66190994}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4402005-8F37-4722-B187-D67F66190994}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4402005-8F37-4722-B187-D67F66190994}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40A26D4F-A63E-417C-8C3D-D90FD2A4EC44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40A26D4F-A63E-417C-8C3D-D90FD2A4EC44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40A26D4F-A63E-417C-8C3D-D90FD2A4EC44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40A26D4F-A63E-417C-8C3D-D90FD2A4EC44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05EFBEE3-CCD0-453B-A085-E6C564C695F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05EFBEE3-CCD0-453B-A085-E6C564C695F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05EFBEE3-CCD0-453B-A085-E6C564C695F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05EFBEE3-CCD0-453B-A085-E6C564C695F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECB07201-1203-41FF-9C2D-BDAD5F5F72A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECB07201-1203-41FF-9C2D-BDAD5F5F72A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECB07201-1203-41FF-9C2D-BDAD5F5F72A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECB07201-1203-41FF-9C2D-BDAD5F5F72A0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
