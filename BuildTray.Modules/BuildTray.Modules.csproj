@@ -31,6 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="StructureMap, Version=2.5.0.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\External Assemlies\StructureMap.dll</HintPath>
@@ -60,12 +62,23 @@
     <Compile Include="PluginManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SaveCompletedBuildAction.cs" />
+    <Compile Include="ViewConfiguration\PlaySoundConfigurationView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewConfiguration\PlaySoundConfigurationView.Designer.cs">
+      <DependentUpon>PlaySoundConfigurationView.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BuildTray.Logic\BuildTray.Logic.csproj">
       <Project>{4113B6A5-29B7-48E8-9B3B-A327BC80610D}</Project>
       <Name>BuildTray.Logic</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ViewConfiguration\PlaySoundConfigurationView.resx">
+      <DependentUpon>PlaySoundConfigurationView.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
