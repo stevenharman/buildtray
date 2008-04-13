@@ -25,6 +25,11 @@ namespace BuildTray.Modules
             get { return "FailedTestAction"; }
         }
 
+        public Type ConfigurationForm
+        {
+            get { return null; }
+        }
+
         private void ShowFailedTests(Build build, ITrayController controller)
         {
             if (build.Status == BuildStatuses.Failed && !string.IsNullOrEmpty(build.LogLocation))

@@ -32,11 +32,21 @@ namespace BuildTray.Modules
             get { return this.GetType().Name; }
         }
 
+        public Type ConfigurationForm
+        {
+            get { return null; }
+        }
+
         private void LogBuild(Build build, ITrayController controller)
         {
+            string logDirectory = Path.Combine(_configuration.ApplicationDataPath, "Log");
+            
+            if (!Directory.Exists(logDirectory))
+                Directory.CreateDirectory(logDirectory);
+
             var serializer = new XmlSerializer(typeof(Build));
             var stream = new FileStream(
-                Path.Combine(_configuration.LogDirectory, build.BuildNumber + ".Xml"), 
+                Path.Combine(logDirectory, build.BuildNumber + ".Xml"), 
                 FileMode.Create, 
                 FileAccess.Write);
 

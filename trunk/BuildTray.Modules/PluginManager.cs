@@ -20,7 +20,7 @@ namespace BuildTray.Modules
 
         public string PluginDirectory
         {
-            get { return _config.PluginDirectory; }
+            get { return Path.Combine(_config.ApplicationDataPath, "Plugins"); }
         }
 
         private readonly IConfigurationData _config;

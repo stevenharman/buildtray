@@ -15,16 +15,20 @@ namespace BuildTray.UI
         {
             BuildConfigurations = new List<BuildInfo>();
             PollingInterval = 30;
+            ApplicationDataPath = ApplicationDeployment.IsNetworkDeployed
+                                  ? ApplicationDeployment.CurrentDeployment.DataDirectory
+                                  : string.Empty;
         }
 
         public List<BuildInfo> BuildConfigurations { get; set; }
         public int PollingInterval { get; set; }
-        public string LogDirectory { get; set; }
-        public string PluginDirectory { get; set; }
+        public string ApplicationDataPath { get; set; }
+        public List<string> ActiveModules { get; set; }
 
         public void Save()
         {
             //Retrieve the data path for the Click Once deployment, or use the current path.
+            //Even if the data path for the application has been changed this will still load from the default location.
             string dataPath = ApplicationDeployment.IsNetworkDeployed
                                   ? ApplicationDeployment.CurrentDeployment.DataDirectory
                                   : string.Empty;

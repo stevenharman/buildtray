@@ -5,10 +5,10 @@ namespace BuildTray.Logic
 {
     public interface IConfigurationData
     {
+        List<string> ActiveModules { get; set; }
         List<BuildInfo> BuildConfigurations { get; set; }
         int PollingInterval { get; set; }
-        string LogDirectory { get; set; }
-        string PluginDirectory { get; set; }
+        string ApplicationDataPath { get; set; }
 
         void Save();
     }
