@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Windows.Forms;
 using BuildTray.Logic;
 using BuildTray.Logic.Entities;
 using BuildTray.Modules;
-using StructureMap;
 using BuildTray.Modules.ViewConfiguration;
 using System.IO;
 
@@ -47,10 +43,13 @@ namespace BuildTray.Modules
 
         private void Play(Build build, ITrayController controller)
         {
-            if (string.IsNullOrEmpty(_configData.ApplicationDataPath))
-                return;
+           // if (string.IsNullOrEmpty(_configData.ApplicationDataPath))
+                //return;
 
             string soundPath = Path.Combine(_configData.ApplicationDataPath, "PlaySoundModule");
+            
+            //Temporary Hack
+            soundPath = @"C:\Sounds";
             
             if (!Directory.Exists(soundPath))
                 return;
