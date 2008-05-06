@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -30,19 +29,32 @@ namespace BuildTray.Modules
             get { return null; }
         }
 
+        private enum TestStatus
+        {
+            Success,
+            Failed,
+            Error
+        }
+
         private void ShowFailedTests(Build build, ITrayController controller)
         {
             if (build.Status == BuildStatuses.Failed && !string.IsNullOrEmpty(build.LogLocation))
             {
-                StringBuilder failedTests = new StringBuilder();
+                var failedTests = new StringBuilder();
                 failedTests.AppendLine("Failed by " + GetResponsiblePerson(controller));
-                StreamReader reader = new StreamReader(build.LogLocation);
+                var reader = new StreamReader(build.LogLocation);
                 string log = reader.ReadToEnd();
+                TestStatus testStatus = TestStatus.Success;
                 if (log.Contains("Test Run Failed."))
+                    testStatus = TestStatus.Failed;
+                else if (log.Contains("Test Run Error."))
+                    testStatus = TestStatus.Error;
+
+                if (testStatus != TestStatus.Success)
                 {
                     int start = log.IndexAfter("Starting execution...");
-                    int length = log.IndexOf("Test Run Failed.") - start;
-                    StringReader logReader = new StringReader(log.Substring(start, length));
+                    int length = (testStatus == TestStatus.Failed ? log.IndexOf("Test Run Failed.") : log.IndexOf("Test Run Error.")) - start;
+                    var logReader = new StringReader(log.Substring(start, length));
                     while (logReader.Peek() != -1)
                     {
                         string currentLine = logReader.ReadLine();

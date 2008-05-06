@@ -115,11 +115,14 @@ namespace BuildTray.UI
 
         void _processTimer_BuildIgnored(object sender, BuildDetailEventArgs e)
         {
-            //If the build is ignored, we need to reset the status cak to what it should be.
-            if (MostRecentCompletedBuild.Status == BuildStatuses.Passed)
-                _notifyIcon.Success();
-            else
-                _notifyIcon.Failure();
+            //If the build is ignored, we need to reset the status to what it should be.
+            if (MostRecentCompletedBuild != null)
+            {
+                if (MostRecentCompletedBuild.Status == BuildStatuses.Passed)
+                    _notifyIcon.Success();
+                else
+                    _notifyIcon.Failure();
+            }
         }
 
         void _processTimer_BuildStarted(object sender, BuildDetailEventArgs e)
@@ -147,9 +150,7 @@ namespace BuildTray.UI
             //If we are getting multiple builds then we don't want to show tool tips on each one.
             if (MostRecentCompletedBuild.StartTime == e.MostRecentStartDate)
             {
-                _notifyIcon.Text = "Build completed " + (DateTime.Now - (MostRecentCompletedBuild.FinishTime
-                                                                         ?? MostRecentCompletedBuild.StartTime)).
-                                                            ToDisplay() + " ago.";
+                _notifyIcon.Text = "Build completed at " + MostRecentCompletedBuild.FinishTime.Value.ToString();
 
                 if (MostRecentCompletedBuild.Status == BuildStatuses.Passed)
                     _notifyIcon.Success();

@@ -39,7 +39,6 @@ namespace BuildTray.Logic
                                  DateTime? maxStartDate = details.Where(build => build.Status.CanConvert()
                                                                                  && (build.GetBuildNumber() > _lastBuild)
                                                                                  && (build.Status == BuildStatus.PartiallySucceeded
-                                                                                     || build.Status == BuildStatus.InProgress
                                                                                      || build.Status == BuildStatus.Failed 
                                                                                      || build.Status == BuildStatus.Succeeded)
                                      ).Max<IBuildDetail, DateTime?>(build => build.StartTime);

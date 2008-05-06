@@ -36,13 +36,14 @@ namespace BuildTray.UI
                     ServerUrl = new Uri("http://vrp-tfs-000:8080")
                 };
 
-                //var configurationData = ObjectFactory.GetInstance<IConfigurationData>();
+                var configurationData = ObjectFactory.GetInstance<IConfigurationData>();
                 //configurationData.Save();
 
-                ObjectFactory.GetInstance<IConfigurationData>().PollingInterval = 30;
+                configurationData.PollingInterval = 30;
                 ITrayController controller = ObjectFactory.GetInstance<ITrayController>();
 
                 controller.AddCompletionModule("FailedTestAction", new FailedTestAction().GetAction());
+                controller.AddCompletionModule("PlaySoundAction", ObjectFactory.GetInstance<PlaySoundAction>().GetAction());
                 controller.Initialize();
                 controller.Execute(info);
                 
