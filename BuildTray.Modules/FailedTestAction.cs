@@ -71,7 +71,7 @@ namespace BuildTray.Modules
 
                         var values = foundStuff.Select(s => new FailedTest
                         {
-                            Output = s.ChildNodes.OfType<XmlNode>().FirstOrDefault(nd => nd.Name == "Output").InnerText,
+                            Output = GetOutput(s.ChildNodes.OfType<XmlNode>().FirstOrDefault(nd => nd.Name == "Output")),
                             TestName = s.Attributes.GetNamedItem("testName").InnerText,
                             ClassName = GetClassName(document, s.Attributes.GetNamedItem("testId").InnerText)
                         });
@@ -92,6 +92,21 @@ namespace BuildTray.Modules
             }
 
 
+        }
+
+        private string GetOutput(XmlNode node)
+        {
+            var debugTraceNode = node.ChildNodes.OfType<XmlNode>().FirstOrDefault(nd => nd.Name == "StdOut");
+            var errorInfoNode = node.ChildNodes.OfType<XmlNode>().FirstOrDefault(nd => nd.Name == "ErrorInfo");
+
+            StringBuilder builder = new StringBuilder();
+            builder.AppendLine("Error Info:");
+            builder.AppendLine(debugTraceNode.InnerText);
+            builder.AppendLine();
+            builder.AppendLine("Stack Trace:");
+            builder.AppendLine(errorInfoNode.InnerText);
+
+            return builder.ToString();
         }
 
         private string GetClassName(XmlDocument document, string testId)
