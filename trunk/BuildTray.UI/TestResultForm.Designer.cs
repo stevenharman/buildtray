@@ -32,12 +32,16 @@
             this.FailedTestList = new System.Windows.Forms.ListBox();
             this.outputText = new System.Windows.Forms.TextBox();
             this.failedByLabel = new System.Windows.Forms.Label();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // okButton
             // 
             this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.okButton.Location = new System.Drawing.Point(451, 374);
+            this.okButton.Location = new System.Drawing.Point(460, 170);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
             this.okButton.TabIndex = 0;
@@ -47,12 +51,13 @@
             // 
             // FailedTestList
             // 
-            this.FailedTestList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.FailedTestList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.FailedTestList.FormattingEnabled = true;
-            this.FailedTestList.Location = new System.Drawing.Point(8, 34);
+            this.FailedTestList.Location = new System.Drawing.Point(12, 27);
             this.FailedTestList.Name = "FailedTestList";
-            this.FailedTestList.Size = new System.Drawing.Size(518, 186);
+            this.FailedTestList.Size = new System.Drawing.Size(523, 173);
             this.FailedTestList.TabIndex = 1;
             this.FailedTestList.SelectedIndexChanged += new System.EventHandler(this.FailedTestList_SelectedIndexChanged);
             // 
@@ -61,33 +66,55 @@
             this.outputText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.outputText.Location = new System.Drawing.Point(8, 228);
+            this.outputText.Location = new System.Drawing.Point(12, 3);
             this.outputText.Multiline = true;
             this.outputText.Name = "outputText";
-            this.outputText.Size = new System.Drawing.Size(518, 140);
+            this.outputText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.outputText.Size = new System.Drawing.Size(523, 161);
             this.outputText.TabIndex = 2;
             // 
             // failedByLabel
             // 
             this.failedByLabel.AutoSize = true;
-            this.failedByLabel.Location = new System.Drawing.Point(5, 9);
+            this.failedByLabel.Location = new System.Drawing.Point(9, 2);
             this.failedByLabel.Name = "failedByLabel";
             this.failedByLabel.Size = new System.Drawing.Size(0, 13);
             this.failedByLabel.TabIndex = 3;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.FailedTestList);
+            this.splitContainer1.Panel1.Controls.Add(this.failedByLabel);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.outputText);
+            this.splitContainer1.Panel2.Controls.Add(this.okButton);
+            this.splitContainer1.Size = new System.Drawing.Size(538, 409);
+            this.splitContainer1.SplitterDistance = 204;
+            this.splitContainer1.TabIndex = 4;
             // 
             // TestResultForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(538, 409);
-            this.Controls.Add(this.failedByLabel);
-            this.Controls.Add(this.outputText);
-            this.Controls.Add(this.FailedTestList);
-            this.Controls.Add(this.okButton);
+            this.Controls.Add(this.splitContainer1);
             this.Name = "TestResultForm";
-            this.Text = "TestResultForm";
+            this.Text = "Failed Test Results";
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -97,5 +124,6 @@
         private System.Windows.Forms.ListBox FailedTestList;
         private System.Windows.Forms.TextBox outputText;
         private System.Windows.Forms.Label failedByLabel;
+        private System.Windows.Forms.SplitContainer splitContainer1;
     }
 }
