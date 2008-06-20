@@ -31,49 +31,59 @@ namespace BuildTray.Logic
 
         private void TimerCallback(object data)
         {
-            _isRunning = true;
-            _builds.Each(bc =>
-                             {
-                                 IList<IBuildDetail> details = _proxy.GetBuildDetails(bc.ServerUrl, bc.ProjectName, bc.BuildName);
+            try
+            {
 
-                                 DateTime? maxStartDate = details.Where(build => build.Status.CanConvert()
-                                                                                 && (build.GetBuildNumber() > _lastBuild)
-                                                                                 && (build.Status == BuildStatus.PartiallySucceeded
-                                                                                     || build.Status == BuildStatus.Failed 
-                                                                                     || build.Status == BuildStatus.Succeeded)
-                                     ).Max<IBuildDetail, DateTime?>(build => build.StartTime);
+                _isRunning = true;
+                _builds.Each(bc =>
+                                 {
+                                     IList<IBuildDetail> details = _proxy.GetBuildDetails(bc.ServerUrl, bc.ProjectName, bc.BuildName);
 
-                                 details.Where(build => build.Status.CanConvert()
-                                                        && (build.GetBuildNumber() > _lastBuild))
-                                     .OrderBy(build => build.StartTime).Each(build =>
-                                                                                 {
-                                                                                     int buildNumber = build.GetBuildNumber();
-                                                                                     if (build.Status == BuildStatus.Failed && build.LogLocation != null)
+                                     DateTime? maxStartDate = details.Where(build => build.Status.CanConvert()
+                                                                                     && (build.GetBuildNumber() > _lastBuild)
+                                                                                     && (build.Status == BuildStatus.PartiallySucceeded
+                                                                                         || build.Status == BuildStatus.Failed
+                                                                                         || build.Status == BuildStatus.Succeeded)
+                                         ).Max<IBuildDetail, DateTime?>(build => build.StartTime);
+
+                                     details.Where(build => build.Status.CanConvert()
+                                                            && (build.GetBuildNumber() > _lastBuild))
+                                         .OrderBy(build => build.StartTime).Each(build =>
                                                                                      {
-                                                                                         StreamReader reader = new StreamReader(build.LogLocation);
-                                                                                         if (reader.ReadToEnd().Contains("Done executing task \"RemoveDir\" -- FAILED."))
+                                                                                         int buildNumber = build.GetBuildNumber();
+                                                                                         if (build.Status == BuildStatus.Failed && build.LogLocation != null)
                                                                                          {
-                                                                                             _isRunning = false;
-                                                                                             BuildIgnored.Raise(this, new BuildDetailEventArgs { Build = build, MostRecentStartDate = maxStartDate ?? DateTime.MinValue });
-                                                                                             return;
+                                                                                             StreamReader reader = new StreamReader(build.LogLocation);
+                                                                                             if (reader.ReadToEnd().Contains("Done executing task \"RemoveDir\" -- FAILED."))
+                                                                                             {
+                                                                                                 reader.Close();
+                                                                                                 _isRunning = false;
+                                                                                                 BuildIgnored.Raise(this, new BuildDetailEventArgs { Build = build, MostRecentStartDate = maxStartDate ?? DateTime.MinValue });
+                                                                                                 return;
+                                                                                             }
+                                                                                             reader.Close();
                                                                                          }
-                                                                                     }
-                                                                                     switch (build.Status)
-                                                                                     {
-                                                                                         case BuildStatus.Failed:
-                                                                                         case BuildStatus.PartiallySucceeded:
-                                                                                         case BuildStatus.Succeeded:
-                                                                                             _lastBuild = buildNumber;
-                                                                                             BuildCompleted.Raise(this, new BuildDetailEventArgs { Build = build, MostRecentStartDate = maxStartDate ?? DateTime.MinValue });
-                                                                                             break;
-                                                                                         case BuildStatus.InProgress:
-                                                                                             _currentBuildNumber = buildNumber;
-                                                                                             BuildStarted.Raise(this, new BuildDetailEventArgs { Build = build, MostRecentStartDate = maxStartDate ?? DateTime.MinValue });
-                                                                                             break;
-                                                                                     }
-                                                                                 });
-                             });
-            _isRunning = false;
+                                                                                         switch (build.Status)
+                                                                                         {
+                                                                                             case BuildStatus.Failed:
+                                                                                             case BuildStatus.PartiallySucceeded:
+                                                                                             case BuildStatus.Succeeded:
+                                                                                                 _lastBuild = buildNumber;
+                                                                                                 BuildCompleted.Raise(this, new BuildDetailEventArgs { Build = build, MostRecentStartDate = maxStartDate ?? DateTime.MinValue });
+                                                                                                 break;
+                                                                                             case BuildStatus.InProgress:
+                                                                                                 _currentBuildNumber = buildNumber;
+                                                                                                 BuildStarted.Raise(this, new BuildDetailEventArgs { Build = build, MostRecentStartDate = maxStartDate ?? DateTime.MinValue });
+                                                                                                 break;
+                                                                                         }
+                                                                                     });
+                                 });
+                _isRunning = false;
+            }
+            catch (Exception ex)
+            {
+                ThreadException.Raise(this, new ExceptionEventArgs{Exception = ex});
+            }
         }
 
         public void Start()
@@ -100,5 +110,6 @@ namespace BuildTray.Logic
         public event EventHandler<BuildDetailEventArgs> BuildStarted;
         public event EventHandler<BuildDetailEventArgs> BuildCompleted;
         public event EventHandler<BuildDetailEventArgs> BuildIgnored;
+        public event EventHandler<ExceptionEventArgs> ThreadException;
     }
 }

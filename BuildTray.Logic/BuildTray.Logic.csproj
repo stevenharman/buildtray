@@ -71,6 +71,8 @@
     <Compile Include="Entities\Build.cs" />
     <Compile Include="Entities\BuildConfiguration.cs" />
     <Compile Include="Entities\BuildInfo.cs" />
+    <Compile Include="ExceptionEventArgs.cs" />
+    <Compile Include="FailedTest.cs" />
     <Compile Include="IBuildProcessTimer.cs" />
     <Compile Include="IConfigurationData.cs" />
     <Compile Include="LogicRegistry.cs" />

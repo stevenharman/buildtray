@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows.Forms;
+using BuildTray.Logic;
 using BuildTray.Logic.Entities;
 
 namespace BuildTray.Modules
@@ -22,5 +23,7 @@ namespace BuildTray.Modules
         IEnumerable<string> InProgressBuildActionNames { get; }
         void RemoveInProgressBuildAction(string name);
         void RemoveCompletedBuildAction(string name);
+        IEnumerable<FailedTest> FailedTests { get; set; }
+        string ResponsibleForFailure { get; set; }
     }
 }
