@@ -41,6 +41,8 @@ namespace BuildTray.UI
             _completedBuildActions.Remove(name);
         }
 
+        public IEnumerable<FailedTest> FailedTests { get; set; }
+
         public void RemoveInProgressBuildAction(string name)
         {
             _inProgressBuildActions.Remove(name);
@@ -64,6 +66,9 @@ namespace BuildTray.UI
             get { return _notifyIcon; }
         }
 
+        private TestResultForm testResultForm;
+        public string ResponsibleForFailure { get; set; }
+
         public void Initialize()
         {
             _notifyIcon.ContextMenuStrip = CreateMenuStrip();
@@ -71,14 +76,29 @@ namespace BuildTray.UI
             _notifyIcon.Visible = true;
             _notifyIcon.DoubleClick += (sender, e) =>
                             {
-                                if (!string.IsNullOrEmpty(_notifyIcon.BalloonTipText))
-                                    MessageBox.Show(_notifyIcon.BalloonTipText, "Build Failure");
+                                if (this.FailedTests != null)
+                                {
+                                    if (testResultForm == null || !testResultForm.Visible)
+                                        testResultForm = new TestResultForm();
+                                    
+                                    testResultForm.Failures = this.FailedTests;
+                                    testResultForm.FailedBy = "Failed by: " +  ResponsibleForFailure;
+                                    testResultForm.RefreshList();
+
+                                    testResultForm.Show();
+                                }
                             };
 
             _processTimer.BuildCompleted += _processTimer_BuildCompleted;
             _processTimer.BuildStarted += _processTimer_BuildStarted;
             _processTimer.BuildIgnored += _processTimer_BuildIgnored;
+            _processTimer.ThreadException += _processTimer_ThreadException;
             _processTimer.Start();
+        }
+
+        void _processTimer_ThreadException(object sender, ExceptionEventArgs e)
+        {
+            throw new ApplicationException("Received an unhandled exception while processing.", e.Exception);
         }
 
        

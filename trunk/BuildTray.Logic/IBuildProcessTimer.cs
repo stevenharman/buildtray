@@ -12,5 +12,6 @@ namespace BuildTray.Logic
         event EventHandler<BuildDetailEventArgs> BuildStarted;
         event EventHandler<BuildDetailEventArgs> BuildCompleted;
         event EventHandler<BuildDetailEventArgs> BuildIgnored;
+        event EventHandler<ExceptionEventArgs> ThreadException;
     }
 }
