@@ -89,6 +89,7 @@ namespace BuildTray.Modules
             else
             {
                 controller.NotifyIcon.BalloonTipText = string.Empty;
+                controller.FailedTests = null;
             }
 
 
@@ -100,11 +101,17 @@ namespace BuildTray.Modules
             var errorInfoNode = node.ChildNodes.OfType<XmlNode>().FirstOrDefault(nd => nd.Name == "ErrorInfo");
 
             StringBuilder builder = new StringBuilder();
-            builder.AppendLine("Error Info:");
-            builder.AppendLine(debugTraceNode.InnerText);
-            builder.AppendLine();
-            builder.AppendLine("Stack Trace:");
-            builder.AppendLine(errorInfoNode.InnerText);
+            if (debugTraceNode != null)
+            {
+                builder.AppendLine("Error Info:");
+                builder.AppendLine(debugTraceNode.InnerText);
+                builder.AppendLine();
+            }
+            if (errorInfoNode != null)
+            {
+                builder.AppendLine("Stack Trace:");
+                builder.AppendLine(errorInfoNode.InnerText);
+            }
 
             return builder.ToString();
         }
