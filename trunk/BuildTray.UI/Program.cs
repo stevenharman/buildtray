@@ -26,8 +26,7 @@ namespace BuildTray.UI
 
             string m_uniqueIdentifier = Application.ExecutablePath.Replace(@"\", "_");
             Mutex m_Mutex = new Mutex(false, m_uniqueIdentifier);
-            //if (m_Mutex.WaitOne(1, true))
-                if(true)
+            if (m_Mutex.WaitOne(1, true))
             {
                 ApplicationContext context = new ApplicationContext();
 
