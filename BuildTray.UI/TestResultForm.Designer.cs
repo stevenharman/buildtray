@@ -34,6 +34,8 @@
             this.failedByLabel = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.btnClaim = new System.Windows.Forms.Button();
+            this.filterCheck = new System.Windows.Forms.CheckBox();
+            this.recordCount = new System.Windows.Forms.Label();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -77,7 +79,7 @@
             // failedByLabel
             // 
             this.failedByLabel.AutoSize = true;
-            this.failedByLabel.Location = new System.Drawing.Point(9, 2);
+            this.failedByLabel.Location = new System.Drawing.Point(12, 7);
             this.failedByLabel.Name = "failedByLabel";
             this.failedByLabel.Size = new System.Drawing.Size(0, 13);
             this.failedByLabel.TabIndex = 3;
@@ -91,6 +93,8 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.recordCount);
+            this.splitContainer1.Panel1.Controls.Add(this.filterCheck);
             this.splitContainer1.Panel1.Controls.Add(this.FailedTestList);
             this.splitContainer1.Panel1.Controls.Add(this.failedByLabel);
             // 
@@ -105,6 +109,7 @@
             // 
             // btnClaim
             // 
+            this.btnClaim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnClaim.Location = new System.Drawing.Point(12, 170);
             this.btnClaim.Name = "btnClaim";
             this.btnClaim.Size = new System.Drawing.Size(75, 23);
@@ -112,6 +117,25 @@
             this.btnClaim.Text = "I\'m On It";
             this.btnClaim.UseVisualStyleBackColor = true;
             this.btnClaim.Click += new System.EventHandler(this.btnClaim_Click);
+            // 
+            // filterCheck
+            // 
+            this.filterCheck.AutoSize = true;
+            this.filterCheck.Location = new System.Drawing.Point(357, 7);
+            this.filterCheck.Name = "filterCheck";
+            this.filterCheck.Size = new System.Drawing.Size(169, 17);
+            this.filterCheck.TabIndex = 4;
+            this.filterCheck.Text = "Filter Timeouts and Deadlocks";
+            this.filterCheck.UseVisualStyleBackColor = true;
+            this.filterCheck.CheckedChanged += new System.EventHandler(this.filterCheck_CheckedChanged);
+            // 
+            // recordCount
+            // 
+            this.recordCount.AutoSize = true;
+            this.recordCount.Location = new System.Drawing.Point(283, 7);
+            this.recordCount.Name = "recordCount";
+            this.recordCount.Size = new System.Drawing.Size(0, 13);
+            this.recordCount.TabIndex = 5;
             // 
             // TestResultForm
             // 
@@ -138,5 +162,7 @@
         private System.Windows.Forms.Label failedByLabel;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Button btnClaim;
+        private System.Windows.Forms.CheckBox filterCheck;
+        private System.Windows.Forms.Label recordCount;
     }
 }

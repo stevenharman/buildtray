@@ -43,8 +43,24 @@ namespace BuildTray.UI
         public void RefreshList()
         {
             FailedTestList.Items.Clear();
-            FailedTestList.Items.AddRange(Failures.Select(fail => string.Format("{0}.{1}", fail.ClassName, fail.TestName)).ToArray());
+
+            FailedTestList.Items.AddRange(GetFilteredFailures());
+
+            recordCount.Text = FailedTestList.Items.Count + " Failed";
+
             outputText.Text = string.Empty;
+        }
+
+        private string[] GetFilteredFailures()
+        {
+            var failures = Failures;
+
+            if (filterCheck.Checked)
+                failures = failures.Where(fail => 
+                    !(fail.Output.Contains("The timeout period elapsed prior to completion of the operation or the server")
+                    || fail.Output.Contains("deadlocked on lock resources with another process and has been chosen as the deadlock victim")));
+
+            return failures.Select(fail => string.Format("{0}.{1}", fail.ClassName, fail.TestName)).ToArray();
         }
 
         public string FailedBy
@@ -76,6 +92,11 @@ namespace BuildTray.UI
             MessageBox.Show("Recipients have been notified");
 
             btnClaim.Enabled = true;
+        }
+
+        private void filterCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            RefreshList();
         }
     }
 }
