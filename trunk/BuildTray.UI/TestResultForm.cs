@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -58,8 +59,21 @@ namespace BuildTray.UI
             MessengerSend.MessengerSend messenger = new MessengerSend.MessengerSend(
                 new MSNCredentials("Pheonix", "pheonixbuildnotify@gmail.com", "pheonix"), new MSNConfiguration(2000, 2000));
 
-            messenger.SendMessageToAllContacts(string.Format("{0} is fixing the build", FailedBy));
-            messenger.Finish();
+            try
+            {
+                messenger.SendMessageToAllContacts(string.Format("{0} is fixing the build", FailedBy));
+                messenger.Finish();
+            }
+            catch (Exception ex)
+            {
+                StringBuilder builder = new StringBuilder();
+                builder.Append("Failed to send IM");
+                builder.AppendLine(ex.ToString());
+                EventLog.WriteEntry("BuildTray", builder.ToString());
+                return;
+            }
+
+            MessageBox.Show("Recipients have been notified");
 
             btnClaim.Enabled = true;
         }
