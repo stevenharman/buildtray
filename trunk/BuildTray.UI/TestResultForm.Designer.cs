@@ -33,6 +33,7 @@
             this.outputText = new System.Windows.Forms.TextBox();
             this.failedByLabel = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btnClaim = new System.Windows.Forms.Button();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -95,11 +96,22 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.btnClaim);
             this.splitContainer1.Panel2.Controls.Add(this.outputText);
             this.splitContainer1.Panel2.Controls.Add(this.okButton);
             this.splitContainer1.Size = new System.Drawing.Size(538, 409);
             this.splitContainer1.SplitterDistance = 204;
             this.splitContainer1.TabIndex = 4;
+            // 
+            // btnClaim
+            // 
+            this.btnClaim.Location = new System.Drawing.Point(12, 170);
+            this.btnClaim.Name = "btnClaim";
+            this.btnClaim.Size = new System.Drawing.Size(75, 23);
+            this.btnClaim.TabIndex = 3;
+            this.btnClaim.Text = "I\'m On It";
+            this.btnClaim.UseVisualStyleBackColor = true;
+            this.btnClaim.Click += new System.EventHandler(this.btnClaim_Click);
             // 
             // TestResultForm
             // 
@@ -125,5 +137,6 @@
         private System.Windows.Forms.TextBox outputText;
         private System.Windows.Forms.Label failedByLabel;
         private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.Button btnClaim;
     }
 }

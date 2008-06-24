@@ -17,6 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildTray.Modules", "BuildT
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External Assemblies", "External Assemblies", "{C1F7BD2C-A595-4A6C-A355-BB833F0A988B}"
 	ProjectSection(SolutionItems) = preProject
+		..\..\Users\Steve\Desktop\SendMSN - Source_1_0_1897_25040\MessengerSend\bin\Debug\DotMSN.dll = ..\..\Users\Steve\Desktop\SendMSN - Source_1_0_1897_25040\MessengerSend\bin\Debug\DotMSN.dll
 		External Assemlies\Rhino.Mocks.dll = External Assemlies\Rhino.Mocks.dll
 		External Assemlies\Rhino.Mocks.xml = External Assemlies\Rhino.Mocks.xml
 		External Assemlies\StructureMap.AutoMocking.dll = External Assemlies\StructureMap.AutoMocking.dll

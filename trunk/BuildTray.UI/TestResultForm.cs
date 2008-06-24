@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using BuildTray.Logic;
+using MessengerSend;
 
 namespace BuildTray.UI
 {
@@ -29,8 +30,8 @@ namespace BuildTray.UI
                 outputText.Text = string.Empty;
                 return;
             }
-            
-            var failure = Failures.FirstOrDefault(fail => 
+
+            var failure = Failures.FirstOrDefault(fail =>
                 string.Format("{0}.{1}", fail.ClassName, fail.TestName) == FailedTestList.SelectedItem.ToString());
 
             outputText.Text = failure.Output;
@@ -51,5 +52,16 @@ namespace BuildTray.UI
             set { failedByLabel.Text = value; }
         }
 
+        private void btnClaim_Click(object sender, EventArgs e)
+        {
+            btnClaim.Enabled = false;
+            MessengerSend.MessengerSend messenger = new MessengerSend.MessengerSend(
+                new MSNCredentials("Pheonix", "pheonixbuildnotify@gmail.com", "pheonix"), new MSNConfiguration(2000, 2000));
+
+            messenger.SendMessageToAllContacts(string.Format("{0} is fixing the build", FailedBy));
+            messenger.Finish();
+
+            btnClaim.Enabled = true;
+        }
     }
 }

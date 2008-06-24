@@ -9,6 +9,7 @@ namespace BuildTray.Logic
 {
     public static class UtilityExtension
     {
+
         public static int IndexAfter(this string value, string search, int start)
         {
             return value.IndexOf(search, start) + search.Length;
