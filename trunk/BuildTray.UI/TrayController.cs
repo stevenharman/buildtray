@@ -162,7 +162,10 @@ namespace BuildTray.UI
 
         void _processTimer_BuildCompleted(object sender, BuildDetailEventArgs e)
         {
-            _completedBuilds.Add(e.Build.ToBuild());
+            Build newBuild = e.Build.ToBuild();
+            newBuild.PreviousBuild = MostRecentCompletedBuild;
+
+            _completedBuilds.Add(newBuild);
 
             if (_currentRunningBuild != null && _currentRunningBuild.BuildNumber == MostRecentCompletedBuild.BuildNumber)
                 _currentRunningBuild = null;

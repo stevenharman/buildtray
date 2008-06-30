@@ -33,7 +33,7 @@ namespace BuildTray.UI
             }
 
             var failure = Failures.FirstOrDefault(fail =>
-                string.Format("{0}.{1}", fail.ClassName, fail.TestName) == FailedTestList.SelectedItem.ToString());
+                string.Format("{0} : {1}.{2}", fail.FailedBy, fail.ClassName, fail.TestName) == FailedTestList.SelectedItem.ToString());
 
             outputText.Text = failure.Output;
         }
@@ -60,7 +60,7 @@ namespace BuildTray.UI
                     !(fail.Output.Contains("The timeout period elapsed prior to completion of the operation or the server")
                     || fail.Output.Contains("deadlocked on lock resources with another process and has been chosen as the deadlock victim")));
 
-            return failures.Select(fail => string.Format("{0}.{1}", fail.ClassName, fail.TestName)).ToArray();
+            return failures.Select(fail => string.Format("{0} : {1}.{2}", fail.FailedBy, fail.ClassName, fail.TestName)).ToArray();
         }
 
         public string FailedBy
