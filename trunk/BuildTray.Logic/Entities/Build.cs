@@ -31,31 +31,49 @@ namespace BuildTray.Logic.Entities
                 return FailedTests;
 
             var info = new FileInfo(LogLocation);
-            var files = Directory.GetFiles(Path.Combine(info.DirectoryName ?? string.Empty, "TestResults"), "*.trx");
 
-            if (files.Any())
+            string path = Path.Combine(info.DirectoryName ?? string.Empty, "TestResults");
+            if (!Directory.Exists(path))
+                return null;
+
+            var files = Directory.GetFiles(path, "*.trx");
+
+            IEnumerable<FailedTest> values = FailedTests;
+            if (values == null)
             {
-                string testResultsFile = files[0];
-                StreamReader fileReader = new StreamReader(testResultsFile);
-                var document = new XmlDocument();
-                document.LoadXml(fileReader.ReadToEnd());
-                fileReader.Close();
-                XmlNodeList nodes = document.GetElementsByTagName("UnitTestResult");
-
-                var foundStuff = nodes.OfType<XmlNode>().Where(nd => nd.Attributes.GetNamedItem("outcome").InnerText == "Failed");
-
-                var values = foundStuff.Select(s => new FailedTest
+                if (files.Any())
                 {
-                    Output = GetOutput(s.ChildNodes.OfType<XmlNode>().FirstOrDefault(nd => nd.Name == "Output")),
-                    TestName = s.Attributes.GetNamedItem("testName").InnerText,
-                    ClassName = GetClassName(document, s.Attributes.GetNamedItem("testId").InnerText),
-                    FailedBy = RequestedFor
-                });
+                    string testResultsFile = files[0];
+                    StreamReader fileReader = new StreamReader(testResultsFile);
+                    var document = new XmlDocument();
+                    document.LoadXml(fileReader.ReadToEnd());
+                    fileReader.Close();
+                    XmlNodeList nodes = document.GetElementsByTagName("UnitTestResult");
+
+                    var foundStuff = nodes.OfType<XmlNode>().Where(nd => nd.Attributes.GetNamedItem("outcome").InnerText == "Failed");
+
+                    values = foundStuff.Select(s => new FailedTest
+                    {
+                        Output = GetOutput(s.ChildNodes.OfType<XmlNode>().FirstOrDefault(nd => nd.Name == "Output")),
+                        TestName = s.Attributes.GetNamedItem("testName").InnerText,
+                        ClassName = GetClassName(document, s.Attributes.GetNamedItem("testId").InnerText),
+                        FailedBy = RequestedFor
+                    });
+                }
 
                 var failedTests = PreviousBuild.GetFailedTests() ?? new List<FailedTest>();
 
                 IList<FailedTest> newFailedTests = values.Except(failedTests).ToList();
                 IList<FailedTest> fixedTests = failedTests.Except(values).ToList();
+
+                
+                var tests = failedTests.Intersect(values).ToList();
+                var newTests = values.Intersect(failedTests).ToList();
+
+                tests.Each(t => failedTests.Remove(t));
+                newTests.Each(failedTests.Add);
+
+                newTests.Each(t => t.FailedBy = tests.Single(nt => nt.Equals(t)).FailedBy);
 
                 newFailedTests.Each(failedTests.Add);
                 fixedTests.Each(ft => failedTests.Remove(ft));
@@ -64,7 +82,7 @@ namespace BuildTray.Logic.Entities
 
                 _loadedTests = true;
 
-                return failedTests;
+                return newFailedTests;
             }
 
             return null;

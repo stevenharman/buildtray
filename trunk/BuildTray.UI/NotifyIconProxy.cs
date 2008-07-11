@@ -93,14 +93,14 @@ namespace BuildTray.UI
         public void Success()
         {
             if (!icons.ContainsKey(TrayStatus.Success))
-                icons.Add(TrayStatus.Success, Icon.FromHandle(Resources.Success.GetHicon()));
+                icons.Add(TrayStatus.Success, Icon.FromHandle(Resources.Success2.GetHicon()));
             _icon.Icon = icons[TrayStatus.Success];
         }
 
         public void Failure()
         {
             if (!icons.ContainsKey(TrayStatus.Failure))
-                icons.Add(TrayStatus.Failure, Icon.FromHandle(Resources.Failure.GetHicon()));
+                icons.Add(TrayStatus.Failure, Icon.FromHandle(Resources.Failure2.GetHicon()));
             _icon.Icon = icons[TrayStatus.Failure];
         }
 
@@ -111,7 +111,7 @@ namespace BuildTray.UI
             {
                 case TrayStatus.Success:
                     if (!icons.ContainsKey(TrayStatus.SuccessInProgress))
-                        icons.Add(TrayStatus.SuccessInProgress, Icon.FromHandle(Resources.SuccessRunning.GetHicon()));
+                        icons.Add(TrayStatus.SuccessInProgress, Icon.FromHandle(Resources.SuccessRunning2.GetHicon()));
                     _icon.Icon = icons[TrayStatus.SuccessInProgress];
                     break;
                 case TrayStatus.SuccessInProgress:
@@ -119,7 +119,7 @@ namespace BuildTray.UI
                     return;
                 case TrayStatus.Failure:
                     if (!icons.ContainsKey(TrayStatus.FailureInProgress))
-                        icons.Add(TrayStatus.FailureInProgress, Icon.FromHandle(Resources.FailureRunning.GetHicon()));
+                        icons.Add(TrayStatus.FailureInProgress, Icon.FromHandle(Resources.FailureRunning2.GetHicon()));
                     _icon.Icon = icons[TrayStatus.FailureInProgress];
                     break;
             }

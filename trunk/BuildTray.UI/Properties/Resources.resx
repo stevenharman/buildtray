@@ -121,13 +121,25 @@
   <data name="Failure" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\redHeart.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Failure2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\decline.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="FailureRunning" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\redHeartRunning.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FailureRunning2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\decline_gear.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Success" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blueHeart.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Success2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\accept.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="SuccessRunning" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blueHeartRunning.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SuccessRunning2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\accept_gear.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

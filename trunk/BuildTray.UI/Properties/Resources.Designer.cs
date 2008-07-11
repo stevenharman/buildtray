@@ -67,9 +67,23 @@ namespace BuildTray.UI.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Failure2 {
+            get {
+                object obj = ResourceManager.GetObject("Failure2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap FailureRunning {
             get {
                 object obj = ResourceManager.GetObject("FailureRunning", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap FailureRunning2 {
+            get {
+                object obj = ResourceManager.GetObject("FailureRunning2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -81,9 +95,23 @@ namespace BuildTray.UI.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Success2 {
+            get {
+                object obj = ResourceManager.GetObject("Success2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap SuccessRunning {
             get {
                 object obj = ResourceManager.GetObject("SuccessRunning", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap SuccessRunning2 {
+            get {
+                object obj = ResourceManager.GetObject("SuccessRunning2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

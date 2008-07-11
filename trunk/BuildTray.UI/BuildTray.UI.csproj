@@ -29,7 +29,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>default.html</WebPage>
-    <ApplicationRevision>21</ApplicationRevision>
+    <ApplicationRevision>28</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -129,8 +129,13 @@
     <Compile Include="UiRegistry.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\accept.png" />
+    <Content Include="Resources\accept_gear.png" />
     <Content Include="Resources\blueHeart.png" />
     <Content Include="Resources\blueHeartRunning.png" />
+    <Content Include="Resources\decline.png" />
+    <Content Include="Resources\decline_gear.png" />
+    <None Include="Resources\Failure2.png" />
     <Content Include="Resources\redHeart.png" />
     <Content Include="Resources\redHeartRunning.png" />
     <None Include="BuildTray.UI_TemporaryKey.pfx" />

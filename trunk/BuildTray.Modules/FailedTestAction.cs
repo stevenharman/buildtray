@@ -58,8 +58,12 @@ namespace BuildTray.Modules
                 else
                     controller.FailedTests = null;
 
+                string failedBy;
+                if (controller.FailedTests != null)
+                    failedBy = string.Join(", ", controller.FailedTests.Select(ft => ft.FailedBy).Distinct().ToArray());
+                else
+                    failedBy = GetResponsiblePerson(controller);
 
-                var failedBy = string.Join(", ", controller.FailedTests.Select(ft => ft.FailedBy).ToArray());
                 controller.NotifyIcon.BalloonTipText = "Failed by " + failedBy;
                 controller.NotifyIcon.ShowBalloonTip(20);
                 controller.ResponsibleForFailure = failedBy;
