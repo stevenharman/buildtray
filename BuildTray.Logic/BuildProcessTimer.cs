@@ -39,11 +39,24 @@ namespace BuildTray.Logic
                                  {
                                      IList<IBuildDetail> details = _proxy.GetBuildDetails(bc.ServerUrl, bc.ProjectName, bc.BuildName);
 
-                                     DateTime? maxStartDate = details.Where(build => build.Status.CanConvert()
-                                                                                     && (build.GetBuildNumber() > _lastBuild)
-                                                                                     && (build.Status == BuildStatus.PartiallySucceeded
-                                                                                         || build.Status == BuildStatus.Failed
-                                                                                         || build.Status == BuildStatus.Succeeded)
+                                     DateTime? maxStartDate = details.Where(build => {
+                                         if (!(build.Status.CanConvert() && (build.GetBuildNumber() > _lastBuild)))
+                                             return false;
+
+                                         if (build.Status == BuildStatus.Failed && build.LogLocation != null)
+                                         {
+                                             StreamReader reader = new StreamReader(build.LogLocation);
+                                             if (reader.ReadToEnd().Contains("Done executing task \"RemoveDir\" -- FAILED."))
+                                             {
+                                                 reader.Close();
+                                                 return false;
+                                             }
+                                         }
+
+                                         return build.Status == BuildStatus.PartiallySucceeded
+                                                     || build.Status == BuildStatus.Failed
+                                                     || build.Status == BuildStatus.Succeeded;
+                                     }                                     
                                          ).Max<IBuildDetail, DateTime?>(build => build.StartTime);
 
                                      details.Where(build => build.Status.CanConvert()
