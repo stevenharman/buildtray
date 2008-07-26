@@ -78,11 +78,11 @@ namespace BuildTray.Logic.Entities
                 newFailedTests.Each(failedTests.Add);
                 fixedTests.Each(ft => failedTests.Remove(ft));
 
-                FailedTests = newFailedTests;
+                FailedTests = failedTests;
 
                 _loadedTests = true;
 
-                return newFailedTests;
+                return failedTests;
             }
 
             return null;
