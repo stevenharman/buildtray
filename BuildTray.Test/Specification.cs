@@ -34,6 +34,8 @@ namespace BuildTray.Test
             After_each_spec();
         }
 
+        public MockRepository Mocks { get { return _mock; } }
+
         public T Mock<T>()
         {
             return _mock.DynamicMock<T>();

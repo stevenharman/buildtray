@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Xml;
 using BuildTray.Logic.Entities;
 using BuildTray.Logic;
 
@@ -31,38 +27,15 @@ namespace BuildTray.Modules
             get { return null; }
         }
 
-        private enum TestStatus
-        {
-            Success,
-            Failed,
-            Error
-        }
-
-        private void ShowFailedTests(Build build, ITrayController controller)
+        private static void ShowFailedTests(Build build, ITrayController controller)
         {
             if (build.Status == BuildStatuses.Failed && !string.IsNullOrEmpty(build.LogLocation))
             {
-                var reader = new StreamReader(build.LogLocation);
-                string log = reader.ReadToEnd();
-                reader.Close();
-                TestStatus testStatus = TestStatus.Success;
-                if (log.Contains("Test Run Failed."))
-                    testStatus = TestStatus.Failed;
-                else if (log.Contains("Test Run Error."))
-                    testStatus = TestStatus.Error;
+                controller.FailedTests = build.GetTestStatus() != TestStatus.Success ? build.GetFailedTests() : null;
 
-                if (testStatus != TestStatus.Success)
-                {
-                    controller.FailedTests = build.GetFailedTests();
-                }
-                else
-                    controller.FailedTests = null;
-
-                string failedBy;
-                if (controller.FailedTests != null)
-                    failedBy = string.Join(", ", controller.FailedTests.Select(ft => ft.FailedBy).Distinct().ToArray());
-                else
-                    failedBy = GetResponsiblePerson(controller);
+                string failedBy = controller.FailedTests != null 
+                                      ? string.Join(", ", controller.FailedTests.Select(ft => ft.FailedBy).Distinct().ToArray()) 
+                                      : controller.GetResponsiblePerson();
 
                 controller.NotifyIcon.BalloonTipText = "Failed by " + failedBy;
                 controller.NotifyIcon.ShowBalloonTip(20);
@@ -73,30 +46,6 @@ namespace BuildTray.Modules
                 controller.NotifyIcon.BalloonTipText = string.Empty;
                 controller.FailedTests = null;
             }
-
-
         }
-
-        
-
-        private string GetResponsiblePerson(ITrayController controller)
-        {
-            string result = null;
-            Build currentBuild = null;
-            foreach (var previous in controller.CompletedBuilds.OrderByDescending(bd => bd.BuildNumber))
-            {
-                if (currentBuild != null)
-                    if (previous.Status == BuildStatuses.Passed && currentBuild.Status == BuildStatuses.Failed)
-                    {
-                        result = currentBuild.RequestedFor;
-                        break;
-                    }
-                currentBuild = previous;
-            }
-
-            return result;
-        }
-
-        
     }
 }

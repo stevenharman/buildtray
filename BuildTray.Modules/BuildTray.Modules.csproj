@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{ECB07201-1203-41FF-9C2D-BDAD5F5F72A0}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControllerExtension.cs" />
     <Compile Include="FailedTestAction.cs" />
     <Compile Include="IActionModuleDefinition.cs" />
     <Compile Include="INotifyIcon.cs" />

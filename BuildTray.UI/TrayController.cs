@@ -76,12 +76,12 @@ namespace BuildTray.UI
             _notifyIcon.Visible = true;
             _notifyIcon.DoubleClick += (sender, e) =>
                             {
-                                if (this.FailedTests != null)
+                                if (FailedTests != null)
                                 {
                                     if (testResultForm == null || !testResultForm.Visible)
                                         testResultForm = new TestResultForm();
                                     
-                                    testResultForm.Failures = this.FailedTests;
+                                    testResultForm.Failures = FailedTests;
                                     testResultForm.FailedBy = "Failed by: " +  ResponsibleForFailure;
                                     testResultForm.RefreshList();
 
@@ -96,7 +96,7 @@ namespace BuildTray.UI
             _processTimer.Start();
         }
 
-        void _processTimer_ThreadException(object sender, ExceptionEventArgs e)
+        static void _processTimer_ThreadException(object sender, ExceptionEventArgs e)
         {
             throw new ApplicationException("Received an unhandled exception while processing.", e.Exception);
         }
@@ -173,7 +173,7 @@ namespace BuildTray.UI
             //If we are getting multiple builds then we don't want to show tool tips on each one.
             if (MostRecentCompletedBuild.StartTime == e.MostRecentStartDate)
             {
-                _notifyIcon.Text = "Build completed at " + MostRecentCompletedBuild.FinishTime.Value.ToString();
+                _notifyIcon.Text = "Build completed at " + MostRecentCompletedBuild.FinishTime.Value;
 
                 if (MostRecentCompletedBuild.Status == BuildStatuses.Passed)
                     _notifyIcon.Success();
