@@ -49,7 +49,7 @@
             this.ClientSize = new System.Drawing.Size(740, 342);
             this.Controls.Add(this.selectedBuilds);
             this.Name = "Configuration";
-            this.Text = "Form1";
+            this.Text = "TFS Build Tray Configuration";
             this.ResumeLayout(false);
 
         }

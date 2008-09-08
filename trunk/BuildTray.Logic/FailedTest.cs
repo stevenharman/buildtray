@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace BuildTray.Logic
+﻿namespace BuildTray.Logic
 {
     public class FailedTest
     {
@@ -18,7 +13,7 @@ namespace BuildTray.Logic
             if (other == null)
                 return false;
 
-            return other.ClassName == this.ClassName && other.TestName == this.TestName;
+            return other.ClassName == ClassName && other.TestName == TestName;
         }
 
         public override int GetHashCode()
