@@ -26,7 +26,7 @@ namespace BuildTray.Logic
             PollingInterval = _configurationData.PollingInterval;
         }
 
-        private void TimerCallback(object data)
+        public void TimerCallback(object data)
         {
             try
             {
@@ -42,7 +42,12 @@ namespace BuildTray.Logic
                                                                                      {
                                                                                          if (build.IsIgnored())
                                                                                          {
-                                                                                             BuildIgnored.Raise(this, new BuildDetailEventArgs { Build = build, MostRecentStartDate = maxStartDate });
+                                                                                             BuildIgnored.Raise(this, new BuildDetailEventArgs
+                                                                                                                          {
+                                                                                                                              Build = build, 
+                                                                                                                              BuildInfo = bc,
+                                                                                                                              MostRecentStartDate = maxStartDate
+                                                                                                                          });
                                                                                          }
                                                                                          else
                                                                                          {
@@ -54,10 +59,20 @@ namespace BuildTray.Logic
                                                                                                  case BuildStatus.PartiallySucceeded:
                                                                                                  case BuildStatus.Succeeded:
                                                                                                      _lastBuild = buildNumber;
-                                                                                                     BuildCompleted.Raise(this, new BuildDetailEventArgs { Build = build, MostRecentStartDate = maxStartDate });
+                                                                                                     BuildCompleted.Raise(this, new BuildDetailEventArgs
+                                                                                                                                    {
+                                                                                                                                        Build = build,
+                                                                                                                                        BuildInfo = bc,
+                                                                                                                                        MostRecentStartDate = maxStartDate
+                                                                                                                                    });
                                                                                                      break;
                                                                                                  case BuildStatus.InProgress:
-                                                                                                     BuildStarted.Raise(this, new BuildDetailEventArgs { Build = build, MostRecentStartDate = maxStartDate });
+                                                                                                     BuildStarted.Raise(this, new BuildDetailEventArgs
+                                                                                                                                  {
+                                                                                                                                      Build = build,
+                                                                                                                                      BuildInfo = bc,
+                                                                                                                                      MostRecentStartDate = maxStartDate
+                                                                                                                                  });
                                                                                                      break;
                                                                                              }
                                                                                          }
@@ -73,13 +88,23 @@ namespace BuildTray.Logic
 
         public void Start()
         {
+            if (_internalTimer != null)
+                throw new ApplicationException("The BuildProcessTimer has already been started.");
+
             _internalTimer = new Timer(TimerCallback, null, new TimeSpan(0, 0, 0, 1), new TimeSpan(0, 0, 0, PollingInterval));
         }
 
         public void Stop()
         {
-            while (_isRunning) { } //Wait until the last callback stops then dispose.
+            if (_internalTimer == null)
+                return;
+
+            var current = DateTime.Now;
+            while (_isRunning || DateTime.Now.Subtract(current).TotalSeconds > 30) { } //Wait until the last callback stops then dispose, 
+                                                                                       //unless 30 seconds goes by and the timer still hasn't finished, then we'll kill it anyways
             _internalTimer.Dispose();
+
+            _internalTimer = null;
         }
 
         public void AddBuild(BuildInfo info)
